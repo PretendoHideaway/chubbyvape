@@ -42,7 +42,7 @@ async function handleMemberTimedOut(guild: Guild, user: User, executor: User, re
 	const embed = new EmbedBuilder();
 
 	embed.setColor(0xC0C0C0);
-	embed.setDescription('•••••••••••••••••••••••••••••••••••');
+	embed.setDescription('――――――――――――――――――――――――――――――――――');
 	embed.setFooter({
 		text: 'Pretendo Hideaway',
 		iconURL: guild.iconURL() as string
@@ -84,7 +84,7 @@ async function handleMemberNicknameChange(guild: Guild, user: User, oldName?: st
 	const embed = new EmbedBuilder();
 
 	embed.setColor(0xC0C0C0);
-	embed.setDescription('•••••••••••••••••••••••••••••••••••');
+	embed.setDescription('――――――――――――――――――――――――――――――――――');
 	embed.setFooter({
 		text: 'Pretendo Network',
 		iconURL: guild.iconURL() as string
@@ -130,7 +130,7 @@ async function handleMemberKick(auditLogEntry: GuildAuditLogsEntry<AuditLogEvent
 	const embed = new EmbedBuilder();
 
 	embed.setColor(0xEF7F31);
-	embed.setDescription('•••••••••••••••••••••••••••••••••••');
+	embed.setDescription('――――――――――――――――――――――――――――――――――');
 	embed.setTimestamp(Date.now());
 	embed.setTitle('Event Type: _Member Kicked_');
 	embed.setFields(
@@ -178,7 +178,7 @@ async function handleMemberBanAdd(auditLogEntry: GuildAuditLogsEntry<AuditLogEve
 	const embed = new EmbedBuilder();
 
 	embed.setColor(0xF24E43);
-	embed.setDescription('•••••••••••••••••••••••••••••••••••');
+	embed.setDescription('――――――――――――――――――――――――――――――――――');
 	embed.setTimestamp(Date.now());
 	embed.setTitle('Event Type: _Member Banned_');
 	embed.setFields(
