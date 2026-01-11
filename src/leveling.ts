@@ -92,16 +92,16 @@ export async function handleLeveling(message: Message): Promise<void> {
 
 		const guild = await messageGuild.fetch();
 
-		let description = `Hello <@${message.author.id}>! You have been given the Trusted role in the Pretendo Network Discord server.`;
+		let description = `Hello <@${message.author.id}>! You have been given the Trusted role in the Pretendo Hideaway Discord server.`;
 		description += '\n\n';
 		description += 'The Trusted role is automatically given to users who have been active in the server for a while. **You are now allowed to send images, link embeds, and other media in all channels. You are also now allowed access to the server\'s voice channels.**';
 
 		const notificationEmbed = new EmbedBuilder();
 		notificationEmbed.setColor(0x65B540);
-		notificationEmbed.setTitle('Congratulations, you have become Trusted in Pretendo!');
+		notificationEmbed.setTitle('Congratulations, you have become Trusted in Pretendo Hideaway!');
 		notificationEmbed.setDescription(description);
 		notificationEmbed.setFooter({
-			text: 'Pretendo Network',
+			text: 'Pretendo Hideaway',
 			iconURL: guild.iconURL()!
 		});
 
@@ -136,7 +136,7 @@ export async function handleLeveling(message: Message): Promise<void> {
 			}
 		);
 		eventLogEmbed.setFooter({
-			text: 'Pretendo Network',
+			text: 'Pretendo Hideaway',
 			iconURL: guild.iconURL()!
 		});
 
