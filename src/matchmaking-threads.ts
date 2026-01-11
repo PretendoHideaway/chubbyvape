@@ -81,7 +81,7 @@ export async function checkMatchmakingThreads(): Promise<void> {
 						}
 					});
 
-					let description = `Hello <@${threadChannel.ownerId}>! This is just to let you know that your Pretendo matchmaking thread <#${threadChannel.id}> has been automatically closed due to inactivity.`;
+					let description = `Hello <@${threadChannel.ownerId}>! This is just to let you know that your Pretendo Hideaway matchmaking thread <#${threadChannel.id}> has been automatically closed due to inactivity.`;
 					description += '\n\n';
 					description += `**This is not a moderator action or punishment.** All threads in <#${threadChannel.parentId}> are automatically closed after a period of inactivity to ensure that each thread is dedicated to a single game session.`;
 					description += '\n\n';
@@ -170,7 +170,7 @@ export async function checkMatchmakingThreads(): Promise<void> {
 				}
 			);
 			eventLogEmbed.setFooter({
-				text: 'Pretendo Network',
+				text: 'Pretendo Hideaway',
 				iconURL: guild.iconURL()!
 			});
 
