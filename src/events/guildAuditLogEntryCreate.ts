@@ -43,7 +43,7 @@ async function handleMemberTimedOut(guild: Guild, user: User, executor: User, re
 	embed.setColor(0xC0C0C0);
 	embed.setDescription('――――――――――――――――――――――――――――――――――');
 	embed.setFooter({
-		text: 'Pretendo Network',
+		text: 'Pretendo Hideaway',
 		iconURL: guild.iconURL() as string
 	});
 
@@ -204,7 +204,7 @@ async function handleMemberBanAdd(auditLogEntry: GuildAuditLogsEntry<AuditLogEve
 		}
 	);
 	embed.setFooter({
-		text: 'Pretendo Network',
+		text: 'Pretendo Hideaway',
 		iconURL: guild.iconURL()!
 	});
 
