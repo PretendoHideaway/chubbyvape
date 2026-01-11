@@ -68,7 +68,7 @@ export default async function messageUpdateHandler(oldMessage: Message | Partial
 			}
 		);
 		eventLogEmbed.setFooter({
-			text: 'Pretendo Network',
+			text: 'Pretendo Hideaway',
 			iconURL: guild.iconURL()!
 		});
 
