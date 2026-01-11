@@ -97,11 +97,11 @@ export async function banHandler(interaction: CommandInteraction | ModalSubmitIn
 		const banEmbed = new EmbedBuilder();
 
 		banEmbed.setTitle('Punishment Details');
-		banEmbed.setDescription('You have been banned from the Pretendo Network server. You may not rejoin at this time, and an appeal may not be possible\nYou may review the details of your ban below');
+		banEmbed.setDescription('You have been banned from the Pretendo Hideaway server. You may not rejoin at this time, and an appeal may not be possible\nYou may review the details of your ban below');
 		banEmbed.setColor(0xF24E43);
 		banEmbed.setTimestamp(Date.now());
 		banEmbed.setFooter({
-			text: 'Pretendo Network',
+			text: 'Pretendo Hideaway',
 			iconURL: guild.iconURL()!
 		});
 		banEmbed.setFields({
