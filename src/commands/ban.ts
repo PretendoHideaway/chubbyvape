@@ -152,7 +152,7 @@ const command = new SlashCommandBuilder()
 			.addNumberOption(option =>
 				option.setName('delete_messages')
 					.setDescription('How much of their recent message history to delete')
-					.addChoices(banMessageDeleteChoices))
+					.addChoices(...banMessageDeleteChoices))
 	)
 	.addSubcommand(subcommand =>
 		subcommand.setName('multiuser')
@@ -168,7 +168,7 @@ const command = new SlashCommandBuilder()
 			.addNumberOption(option =>
 				option.setName('delete_messages')
 					.setDescription('How much of their recent message history to delete')
-					.addChoices(banMessageDeleteChoices))
+					.addChoices(...banMessageDeleteChoices))
 	);
 
 export default {
