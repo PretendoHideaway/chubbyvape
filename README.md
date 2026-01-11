@@ -1,6 +1,6 @@
-# Chubby
+# ChubbyVape
 
-Discord moderation bot for Pretendo
+Discord moderation bot for Pretendo Hideaway
 
 Features:
 
