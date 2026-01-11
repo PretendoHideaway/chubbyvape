@@ -114,7 +114,7 @@ function createEmbed(reaction: MessageReaction, message: Message): EmbedBuilder 
 			}
 		])
 		.setFooter({
-			text: 'Pretendo Network',
+			text: 'Pretendo Hideaway',
 			iconURL: reaction.message.guild!.iconURL()!
 		});
 
