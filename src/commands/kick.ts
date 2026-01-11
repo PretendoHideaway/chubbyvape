@@ -101,11 +101,11 @@ export async function kickHandler(interaction: CommandInteraction | ModalSubmitI
 			const banEmbed = new EmbedBuilder();
 
 			banEmbed.setTitle('Punishment Details');
-			banEmbed.setDescription('You have been banned from the Pretendo Network server. You may not rejoin at this time, and an appeal may not be possible\nYou may review the details of your ban below');
+			banEmbed.setDescription('You have been banned from the Pretendo Hideaway server. You may not rejoin at this time, and an appeal may not be possible\nYou may review the details of your ban below');
 			banEmbed.setColor(0xF24E43);
 			banEmbed.setTimestamp(Date.now());
 			banEmbed.setFooter({
-				text: 'Pretendo Network',
+				text: 'Pretendo Hideaway',
 				iconURL: guild.iconURL()!
 			});
 			banEmbed.setFields(
@@ -129,7 +129,7 @@ export async function kickHandler(interaction: CommandInteraction | ModalSubmitI
 			const kickEmbed = new EmbedBuilder();
 
 			kickEmbed.setTitle('Punishment Details');
-			kickEmbed.setDescription('You have been kicked from the Pretendo Network server. You may rejoin after reviewing the details of the kick below');
+			kickEmbed.setDescription('You have been kicked from the Pretendo Hideaway server. You may rejoin after reviewing the details of the kick below');
 			kickEmbed.setColor(0xEF7F31);
 			kickEmbed.setTimestamp(Date.now());
 			kickEmbed.setFooter({
