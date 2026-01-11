@@ -44,7 +44,7 @@ export default async function guildMemberRemoveHandler(member: GuildMember | Par
 		}
 	);
 	eventLogEmbed.setFooter({
-		text: 'Pretendo Network',
+		text: 'Pretendo Hideaway',
 		iconURL: guild.iconURL()!
 	});
 
