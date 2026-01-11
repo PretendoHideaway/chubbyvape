@@ -1,7 +1,7 @@
 {
-	"name": "chubby",
+	"name": "chubbyvape",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Moderation bot for Pretendo Hideaway",
 	"main": "./dist/bot.js",
 	"scripts": {
 		"dev": "tsup --watch --onSuccess \"node dist/bot.js\"",
