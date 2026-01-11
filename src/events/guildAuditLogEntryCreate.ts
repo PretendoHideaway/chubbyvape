@@ -1,16 +1,17 @@
-import { AuditLogEvent, EmbedBuilder } from 'discord.js';
+import { AuditLogEvent, EmbedBuilder, User } from 'discord.js';
+import type { Guild, GuildAuditLogsEntry, PartialUser } from 'discord.js';
 import { sendEventLogMessage } from '@/util';
-import type { Guild, User, GuildAuditLogsEntry } from 'discord.js';
 
 export default async function guildAuditLogEntryCreateHandler(auditLogEntry: GuildAuditLogsEntry, guild: Guild): Promise<void> {
 	if (logIsForEvent(auditLogEntry, AuditLogEvent.MemberUpdate)) {
-		const user = auditLogEntry.target;
-		if (!user) {
+		const target = auditLogEntry.target;
+		if (!isFullUser(target)) {
 			return;
 		}
+		const user = target;
 
 		const executor = auditLogEntry.executor;
-		if (!executor) {
+		if (!isFullUser(executor)) {
 			return;
 		}
 
@@ -41,7 +42,7 @@ async function handleMemberTimedOut(guild: Guild, user: User, executor: User, re
 	const embed = new EmbedBuilder();
 
 	embed.setColor(0xC0C0C0);
-	embed.setDescription('――――――――――――――――――――――――――――――――――');
+	embed.setDescription('•••••••••••••••••••••••••••••••••••');
 	embed.setFooter({
 		text: 'Pretendo Hideaway',
 		iconURL: guild.iconURL() as string
@@ -83,7 +84,7 @@ async function handleMemberNicknameChange(guild: Guild, user: User, oldName?: st
 	const embed = new EmbedBuilder();
 
 	embed.setColor(0xC0C0C0);
-	embed.setDescription('――――――――――――――――――――――――――――――――――');
+	embed.setDescription('•••••••••••••••••••••••••••••••••••');
 	embed.setFooter({
 		text: 'Pretendo Network',
 		iconURL: guild.iconURL() as string
@@ -103,12 +104,12 @@ async function handleMemberNicknameChange(guild: Guild, user: User, oldName?: st
 		{
 			name: 'Old Nickname',
 			value: oldName ?? '(No Nickname)',
-			inline: true
+					inline: true
 		},
 		{
 			name: 'New Nickname',
 			value: newName ?? '(No Nickname)',
-			inline: true
+					inline: true
 		}
 	);
 
@@ -116,10 +117,9 @@ async function handleMemberNicknameChange(guild: Guild, user: User, oldName?: st
 }
 
 async function handleMemberKick(auditLogEntry: GuildAuditLogsEntry<AuditLogEvent.MemberKick>, guild: Guild): Promise<void> {
-	const user = auditLogEntry.target;
-	if (!user) {
-		return;
-	}
+	const userCandidate = auditLogEntry.target;
+	if (!isFullUser(userCandidate)) return;
+	const user = userCandidate;
 
 	const executor = auditLogEntry.executor;
 	// * If the executor is Chubby, then this will have been logged elsewhere
@@ -130,7 +130,7 @@ async function handleMemberKick(auditLogEntry: GuildAuditLogsEntry<AuditLogEvent
 	const embed = new EmbedBuilder();
 
 	embed.setColor(0xEF7F31);
-	embed.setDescription('――――――――――――――――――――――――――――――――――');
+	embed.setDescription('•••••••••••••••••••••••••••••••••••');
 	embed.setTimestamp(Date.now());
 	embed.setTitle('Event Type: _Member Kicked_');
 	embed.setFields(
@@ -156,7 +156,7 @@ async function handleMemberKick(auditLogEntry: GuildAuditLogsEntry<AuditLogEvent
 		}
 	);
 	embed.setFooter({
-		text: 'Pretendo Network',
+		text: 'Pretendo Hideaway',
 		iconURL: guild.iconURL()!
 	});
 
@@ -178,7 +178,7 @@ async function handleMemberBanAdd(auditLogEntry: GuildAuditLogsEntry<AuditLogEve
 	const embed = new EmbedBuilder();
 
 	embed.setColor(0xF24E43);
-	embed.setDescription('――――――――――――――――――――――――――――――――――');
+	embed.setDescription('•••••••••••••••••••••••••••••••••••');
 	embed.setTimestamp(Date.now());
 	embed.setTitle('Event Type: _Member Banned_');
 	embed.setFields(
@@ -217,4 +217,8 @@ function logIsForEvent<EventType extends AuditLogEvent>(log: GuildAuditLogsEntry
 
 function isStringOrUndefined(input: any): input is string | undefined {
 	return input === undefined || typeof input === 'string';
+}
+
+function isFullUser(user: User | PartialUser | null | undefined): user is User {
+	return !!user && 'id' in user && typeof (user as any)._equals === 'function';
 }
