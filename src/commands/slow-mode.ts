@@ -320,7 +320,7 @@ async function enableStaticSlowModeHandler(interaction: ChatInputCommandInteract
 				value: `1 message every ${limit} seconds`
 			}
 		).setFooter({
-			text: 'Pretendo Network',
+			text: 'Pretendo Hideaway',
 			iconURL: interaction.guild!.iconURL()!
 		});
 
@@ -372,7 +372,7 @@ async function disableSlowModeHandler(interaction: ChatInputCommandInteraction):
 				value: `<#${channel.id}>`
 			}
 		).setFooter({
-			text: 'Pretendo Network',
+			text: 'Pretendo Hideaway',
 			iconURL: interaction.guild!.iconURL()!
 		});
 
@@ -488,7 +488,7 @@ function staticSlowModeStats(slowMode: SlowMode | null, channel: GuildTextBasedC
 			}
 		])
 		.setFooter({
-			text: 'Pretendo Network',
+			text: 'Pretendo Hideaway',
 			iconURL: channel.guild.iconURL()!
 		});
 
